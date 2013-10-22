@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="MineWatcher.MinerDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama x:Name="panoramaRoot" Title="MineWatcher" Loaded="Panorama_Loaded">
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="/Assets/Servers_wallpapers_8_whiteMode.png"
+                    Stretch="UniformToFill" />
+            </controls:Panorama.Background>
+            <controls:Panorama.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="titleName" Text="{Binding name}" FontSize="40" FontWeight="Bold"/>
+                </DataTemplate>
+            </controls:Panorama.HeaderTemplate>
+            <controls:Panorama.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!-- Image and Speed -->
+                        <Image Source="{Binding image}" Stretch="None" HorizontalAlignment="Center" Width="456" Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <TextBlock x:Name="SpeedText" TextAlignment="Center" FontSize="40" HorizontalAlignment="Center" Width="456" Grid.Row="1" Text="{Binding speedText}"  Grid.ColumnSpan="2"/>
+                        <!-- DATE -->
+                        <Rectangle Fill="#FFF" Margin="0,20,0,0"  HorizontalAlignment="Center" Height="3"  Grid.Row="2" Stroke="White"  VerticalAlignment="Center" Width="456" Grid.ColumnSpan="2"/>
+                        <TextBlock Grid.Row="4" Grid.Column="0"  FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Text="{Binding ago}" Grid.ColumnSpan="2"/>
+                        <TextBlock Grid.Row="5" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Last online: " VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding last_share}" VerticalAlignment="Center"/>
+
+                        <!-- % -->
+                        <Rectangle Fill="#FFF" Margin="0,20,0,0"  HorizontalAlignment="Center" Height="1"  Grid.Row="6" Stroke="White"  VerticalAlignment="Center" Width="456" Grid.ColumnSpan="2"/>
+                        <TextBlock Grid.Row="7" Grid.Column="0"  FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Text="{Binding percent}" Grid.ColumnSpan="2"/>
+                        <TextBlock Grid.Row="8" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Shares: " VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="8" Grid.Column="1"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding shares}" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="9" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Stale: " VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="9" Grid.Column="1"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding stale}" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </controls:Panorama.ItemTemplate>
+        </controls:Panorama>
+    </Grid>
+
+</phone:PhoneApplicationPage>

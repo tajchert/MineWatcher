@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{75cece84-2767-4877-bdab-ff4a25f5a1b6}" Title="MineWatcher" RuntimeType="Silverlight" Version="1.1" Genre="apps.normal" Author="Michał Tajchert" Description="Connect to PolMiner (other pools are on the way) and monitor your miners! Completly free! Never lose any Bitcoin during some problem with miner." Publisher="Michał Tajchert" BitsPerPixel="16">
+    <IconPath IsRelative="true" IsResource="false">Icon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="MineWatcherToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">IconTile.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>MineWatcher</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>
