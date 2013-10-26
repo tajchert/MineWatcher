@@ -11,12 +11,12 @@ namespace MineWatcher
         public int shares { get; set; }
         public int stale { get; set; }
         public string last_share { get; set; }
-        public float speed { get; set; }
+        public double speed { get; set; }
         public string image { get; set; }
         public string speedText { get; set; }
         public string ago { get; set; }
         public string percent { get; set; }
-        public DateTime last_online;
+        //public DateTime last_online;
         //object
     }
 

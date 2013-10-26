@@ -17,11 +17,16 @@ namespace MineWatcher
 
 
             DateTime CurrentDate = System.DateTime.Now;
+            DateTime then;
             for (int i = 0; i < general.workers.Count; i++) // Loop through List with for
             {
-                general.workers[i].last_online = DateTime.ParseExact(general.workers[i].last_share, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                System.Diagnostics.Debug.WriteLine("Time: " + general.workers[i].last_online);
-                TimeSpan TimeDifference = CurrentDate - general.workers[i].last_online;
+
+                //general.workers[i].last_online = DateTime.ParseExact(general.workers[i].last_share, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                then = DateTime.ParseExact(general.workers[i].last_share, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                //System.Diagnostics.Debug.WriteLine("Time: " + general.workers[i].last_online);
+                System.Diagnostics.Debug.WriteLine("Time: " + then);
+                //TimeSpan TimeDifference = CurrentDate - general.workers[i].last_online;
+                TimeSpan TimeDifference = CurrentDate - then;
                 System.Diagnostics.Debug.WriteLine("Miner number: " + i + ", last online: " + TimeDifference.TotalMinutes + "minutes ago.");
                 int Minutes_To_Offline = Default.MINUTES_TO_OFFLINE;
                 if (IsolatedStorageSettings.ApplicationSettings.Contains("time"))

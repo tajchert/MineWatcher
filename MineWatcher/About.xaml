@@ -22,8 +22,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MineWatcher" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="About" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding Path=AppResources.Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=AppResources.AboutTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -43,15 +43,15 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="SpeedText" TextAlignment="Right" FontSize="40"  HorizontalAlignment="Right"  Grid.Row="1" Text="Application:"  Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="SpeedText" TextAlignment="Right" FontSize="40"  HorizontalAlignment="Right"  Grid.Row="1" Text="{Binding Path=AppResources.AboutAppTitle, Source={StaticResource LocalizedStrings}}"  Grid.ColumnSpan="2"/>
                 <Image Source="{Binding image}" Stretch="None" HorizontalAlignment="Center" Width="456" Grid.Row="0" Grid.ColumnSpan="2"/>
-                <TextBlock HorizontalAlignment="Left"  Grid.Row="2" TextWrapping="Wrap" Text="App is designed to help you watch over your bitcoin miner on a PolMine server. Other extra servers will be added in a future (slush pool etc.)." VerticalAlignment="Top" Width="456"/>
-                <Button Content="Rate this app" Width="270" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Top" Click="RateMyAppButton_Click"/>
+                <TextBlock HorizontalAlignment="Left"  Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=AppResources.AboutAppDesc, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="456"/>
+                <Button Content="{Binding Path=AppResources.AboutRateThisApp, Source={StaticResource LocalizedStrings}}" Width="270" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Top" Click="RateMyAppButton_Click"/>
 
-                <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Grid.Row="4" FontSize="40"  TextWrapping="Wrap" Text="Author:" VerticalAlignment="Top" Width="456"/>
-                <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Grid.Row="5" FontSize="30"  TextWrapping="Wrap" Text="Michał Tajchert" VerticalAlignment="Top" Width="456"/>
-                <TextBlock HorizontalAlignment="Left" Grid.Row="6" TextWrapping="Wrap" Text="Student of the PJWSTK in Warsaw, Android and Windows Phone developer." VerticalAlignment="Top" Width="456"/>
-                <Button Content="More about me..." Width="270" HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Top" Click="MyWebPageButton_Click"/>
+                <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Grid.Row="4" FontSize="40"  TextWrapping="Wrap" Text="{Binding Path=AppResources.AboutMeTitle, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="456"/>
+                <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Grid.Row="5" FontSize="30"  TextWrapping="Wrap" Text="{Binding Path=AppResources.AboutMeName, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="456"/>
+                <TextBlock HorizontalAlignment="Left" Grid.Row="6" TextWrapping="Wrap" Text="{Binding Path=AppResources.AboutMeDesc, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="456"/>
+                <Button Content="{Binding Path=AppResources.AboutMoreMe, Source={StaticResource LocalizedStrings}}" Width="270" HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Top" Click="MyWebPageButton_Click"/>
 
             </Grid>
         </Grid>

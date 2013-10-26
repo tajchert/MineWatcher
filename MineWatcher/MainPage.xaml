@@ -11,10 +11,12 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
+    
     shell:SystemTray.IsVisible="True">
-
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" >
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -27,8 +29,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Mine Watcher" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="General"/>
+            <TextBlock Text="{Binding Path=AppResources.Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding Path=AppResources.GeneralTitle, Source={StaticResource LocalizedStrings}}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -46,12 +48,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Sum:  " VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Path=AppResources.SpeedSum, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
             <TextBlock x:Name="SumOfSpeed" Grid.Row="0" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="X MH/s" VerticalAlignment="Center"/>
             <Rectangle Fill="#FFF" HorizontalAlignment="Center" Height="5" Margin="0,0,0,0" Grid.Row="1" Stroke="Black"  VerticalAlignment="Center" Width="456" Grid.ColumnSpan="2"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Payout:  " VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Path=AppResources.PayoutText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
             <TextBlock x:Name="Payout" Grid.Row="2" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="X BTC" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Balance:  " VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Path=AppResources.BalanceText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
             <TextBlock x:Name="Balance" Grid.Row="3" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="X BTC" VerticalAlignment="Center"/>
             <Rectangle Fill="#FFF" HorizontalAlignment="Center" Height="5" Margin="0,0,0,0" Grid.Row="4" Stroke="Black"  VerticalAlignment="Center" Width="456" Grid.ColumnSpan="2"/>
             <ListBox x:Name="listBoxWorkers" Grid.Row="5" Grid.Column="0" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="ListBox_SelectionChanged" Width="477"  Height="450">

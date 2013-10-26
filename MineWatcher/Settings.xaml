@@ -22,22 +22,22 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MineWatcher" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding Path=AppResources.Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=AppResources.SettingsTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBox Height="72" HorizontalAlignment="Center"  Name="tokenInput" 
-      Text="2e58e39abfa62691501af17301128a98" VerticalAlignment="Top" Width="438" />
+      Text="{Binding Path=AppResources.SettingsTokenInput, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="438" />
 
             <TextBlock TextAlignment="Right" VerticalAlignment="Top"
-      Text="Can be found at your account at PolMine.pl" Margin="110,60,0,0"  FontSize="18" />
+      Text="{Binding Path=AppResources.SettingsDesc, Source={StaticResource LocalizedStrings}}" Margin="110,60,0,0"  FontSize="18" />
 
-            <Button Content="Save" Height="72" HorizontalAlignment="Center" Margin="103,216,103,0" 
+            <Button Content="{Binding Path=AppResources.SettingsSaveButton, Source={StaticResource LocalizedStrings}}" Height="72" HorizontalAlignment="Center" Margin="103,216,103,0" 
       Name="btnSave" VerticalAlignment="Top" Width="250" Click="btnSave_Click" />
             <Slider Value="30" Maximum="120" Minimum="15" Name="sliderInput"  HorizontalAlignment="Center" Margin="0,121,0,0" VerticalAlignment="Top" Width="438" Height="90" ValueChanged="sliderInput_ValueChanged"/>
-            <TextBlock HorizontalAlignment="Left" Margin="9,89,0,0" TextWrapping="Wrap" Text="Minutes to mark miner as offline:" VerticalAlignment="Top" Width="447"/>
+            <TextBlock HorizontalAlignment="Left" Margin="9,89,0,0" TextWrapping="Wrap" Text="{Binding Path=AppResources.SettingsTimeDesc, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="447"/>
             <TextBlock HorizontalAlignment="Left" FontSize="17" Margin="382,171,0,0" TextWrapping="Wrap" Text="120 min." VerticalAlignment="Top" Width="64"/>
             <TextBlock HorizontalAlignment="Center" Name="sliderValue" Margin="0,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         </Grid>

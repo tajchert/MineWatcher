@@ -45,6 +45,8 @@ namespace MineWatcher
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
+
+        
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -147,7 +149,8 @@ namespace MineWatcher
             general.workers = root.workers;
             general.block = root.block;
             general.block_all = root.block_all;
-            general.round_start_date = DateTime.ParseExact(root.last_round_start_date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+            general.round_start_date = root.last_round_start_date;
+            //general.round_start_date = DateTime.ParseExact(root.last_round_start_date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
             progressBar1.Value = 100;
             progressBar1.Visibility = System.Windows.Visibility.Collapsed;
 
