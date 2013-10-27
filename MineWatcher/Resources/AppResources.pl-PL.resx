@@ -147,6 +147,9 @@
   <data name="GeneralTitle" xml:space="preserve">
     <value>PolMine.pl</value>
   </data>
+  <data name="LastOnline" xml:space="preserve">
+    <value>Online:</value>
+  </data>
   <data name="PayoutText" xml:space="preserve">
     <value>Wypłaty:</value>
   </data>
@@ -165,8 +168,14 @@
   <data name="SettingsTokenInput" xml:space="preserve">
     <value>Twój Token API</value>
   </data>
+  <data name="Shares" xml:space="preserve">
+    <value>Shares: </value>
+  </data>
   <data name="SpeedSum" xml:space="preserve">
     <value>Suma:</value>
+  </data>
+  <data name="Stale" xml:space="preserve">
+    <value>Stale: </value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>MineWatcher</value>

@@ -47,6 +47,29 @@ namespace MineWatcher
                 //sliderValue.Text = tmpVal;
             }
         }
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+            if (!settings.Contains("token"))
+            {
+                settings.Add("token", tokenInput.Text);
+            }
+            else
+            {
+                settings["token"] = tokenInput.Text;
+            }
+            settings.Save();
+            if (!settings.Contains("time"))
+            {
+                settings.Add("time", Math.Round(sliderInput.Value, 0) + "");
+            }
+            else
+            {
+                settings["time"] = Math.Round(sliderInput.Value, 0) + "";
+            }
+            settings.Save();
+            base.OnBackKeyPress(e);
+        }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;

@@ -53,15 +53,15 @@
                         <!-- DATE -->
                         <Rectangle Fill="#FFF" Margin="0,20,0,0"  HorizontalAlignment="Center" Height="3"  Grid.Row="2" Stroke="White"  VerticalAlignment="Center" Width="456" Grid.ColumnSpan="2"/>
                         <TextBlock Grid.Row="4" Grid.Column="0"  FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Text="{Binding ago}" Grid.ColumnSpan="2"/>
-                        <TextBlock Grid.Row="5" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Last online: " VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding Path=AppResources.LastOnline, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="5" Grid.Column="1"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding last_share}" VerticalAlignment="Center"/>
 
                         <!-- % -->
                         <Rectangle Fill="#FFF" Margin="0,20,0,0"  HorizontalAlignment="Center" Height="1"  Grid.Row="6" Stroke="White"  VerticalAlignment="Center" Width="456" Grid.ColumnSpan="2"/>
                         <TextBlock Grid.Row="7" Grid.Column="0"  FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Text="{Binding percent}" Grid.ColumnSpan="2"/>
-                        <TextBlock Grid.Row="8" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Shares: " VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="8" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding Path=AppResources.Shares, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="8" Grid.Column="1"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding shares}" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="9" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Stale: " VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="9" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding Path=AppResources.Stale, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="9" Grid.Column="1"  FontSize="25" HorizontalAlignment="Left" Margin="0,0,0,0" Text="{Binding stale}" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>

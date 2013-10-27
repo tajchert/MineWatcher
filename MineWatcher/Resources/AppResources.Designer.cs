@@ -151,6 +151,15 @@ namespace MineWatcher.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last online:.
+        /// </summary>
+        public static string LastOnline {
+            get {
+                return ResourceManager.GetString("LastOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Payout:.
         /// </summary>
         public static string PayoutText {
@@ -205,11 +214,29 @@ namespace MineWatcher.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shares: .
+        /// </summary>
+        public static string Shares {
+            get {
+                return ResourceManager.GetString("Shares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sum:.
         /// </summary>
         public static string SpeedSum {
             get {
                 return ResourceManager.GetString("SpeedSum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stale: .
+        /// </summary>
+        public static string Stale {
+            get {
+                return ResourceManager.GetString("Stale", resourceCulture);
             }
         }
         

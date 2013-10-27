@@ -32,6 +32,8 @@ namespace MineWatcher
         public MainPage()
         {
             InitializeComponent();
+            System.Diagnostics.Debug.WriteLine("Culture: " + CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+            //(ApplicationBar.MenuItems[3] as ApplicationBarMenuItem).Text = _SettingsTitle;
             var v = (Visibility)Resources["PhoneLightThemeVisibility"];
             //True for light theme
             if (v == Visibility.Visible)
@@ -58,6 +60,7 @@ namespace MineWatcher
                 jsonContent = IsolatedStorageSettings.ApplicationSettings["json"] as string;
                 if (jsonContent != null && jsonContent.Contains("last_round_start"))
                 {
+
                     parse_JSON(jsonContent);
                 }
                 token = IsolatedStorageSettings.ApplicationSettings["token"] as string;
