@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutAppDesc" xml:space="preserve">
-    <value>App is designed to help you watch over your bitcoin miner on a PolMine server. Other extra servers will be added in a future (slush pool etc.).</value>
+    <value>Aplikacja została stworzona jako pomoc dla wszystkich osób które wydobywają bitcoiny. Pozwala kontrolować pracę koparek oraz swoje zarobki.</value>
   </data>
   <data name="AboutAppTitle" xml:space="preserve">
     <value>Aplikacja:</value>
   </data>
   <data name="AboutMeDesc" xml:space="preserve">
-    <value>Student PJWSTK, deweloper na platformę Android, oraz Windows Phone.</value>
+    <value>Student PJWSTK, twórca aplikacji na platformę Android, oraz Windows Phone.</value>
   </data>
   <data name="AboutMeName" xml:space="preserve">
     <value>Michał Tajchert</value>

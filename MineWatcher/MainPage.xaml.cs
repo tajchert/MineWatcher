@@ -17,6 +17,8 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
 using Microsoft.Phone.Tasks;
+using System.Net.Http;
+using Microsoft.Phone.Net.NetworkInformation;
 
 namespace MineWatcher
 {
@@ -83,20 +85,30 @@ namespace MineWatcher
 
 
         }
-        void consumeJson()
+        async void consumeJson()
         {
-            progressBar1.Visibility = System.Windows.Visibility.Visible;
-            progressBar1.Value = 22;
-            WebClient webClient = new WebClient();
-            webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(OnReadCompleted);
-            webClient.DownloadStringAsync(new Uri(Default.POLMINE_ADDRESS + token));
-            //https://polmine.pl/?action=api&cmd=dc48a571da3d78b1e744d14d83355729
-            //THEIR 2e58e39abfa62691501af17301128a98
-            //MY dc48a571da3d78b1e744d14d83355729
+            if (NetworkInterface.NetworkInterfaceType != NetworkInterfaceType.None)
+            {
+                progressBar1.Visibility = System.Windows.Visibility.Visible;
+                progressBar1.Value = 22;
+                WebClient webClient = new WebClient();
+                webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(OnReadCompleted);
+                webClient.DownloadStringAsync(new Uri(Default.POLMINE_ADDRESS + token));
+                progressBar1.Value = 33;
+                //https://polmine.pl/?action=api&cmd=dc48a571da3d78b1e744d14d83355729
+                //THEIR 2e58e39abfa62691501af17301128a98
+                //MY dc48a571da3d78b1e744d14d83355729
+            }
+            else
+            {
+                MessageBoxResult m = MessageBox.Show("Conenction error", "No Internet connection.", MessageBoxButton.OK);
+            }
+            
         }
         void OnReadCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            if (e.Error != null)
+            System.Diagnostics.Debug.WriteLine("OnReadCompleted");
+            if (e.Result == null)
             {
                 System.Diagnostics.Debug.WriteLine("Error on retreving.");
                 return;
